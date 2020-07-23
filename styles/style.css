@@ -1,0 +1,679 @@
+/*
+*********************************
+Common styles
+*********************************
+*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: #fff;
+  color: #3b4252;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-rendering: optimizeLegibility; /* оптимизация разборчивости текста */
+  margin: 0;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+[class*="col-"] {
+  float: left;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
+h1 {
+  margin: 0;
+  font-family: "Source Sans Pro",sans-serif;
+  color: #434c5e;
+  text-transform: uppercase;
+  font-weight: 400;
+  letter-spacing: 2px;
+  line-height: 1em;
+  font-style: normal;
+}
+
+h2 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h2:after {
+  display: block;
+  height: 2px;
+  background-color: #434c5e;
+  content: " ";
+  width: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+h3 {
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  padding-left: 24%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+section {
+  padding: 100px 0;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  clear: both;
+}
+
+.centred-horizontally {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.float-clearing {
+	zoom: 1;
+}
+
+.float-clearing:after {
+	zoom: 1;
+	content: " ";
+	clear: both;
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+
+section p,
+#contact-form, {
+  font-size: 85%;
+  text-align: justify;
+  line-height: 20px;
+}
+
+/*
+*********************************
+Header styles
+*********************************
+*/
+
+.mobile-icon {
+  float: right;
+  cursor: pointer;
+  display: none;
+}
+
+.mobile-icon i {
+  font-size: 80%;
+  color: #434c5e;
+}
+
+
+header { /* корректное расположение картинки на странице */
+  background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.3)), url(../img/bg_img.jpg);
+  height: 100vh;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  z-index: -100;
+  background-attachment: fixed;
+}
+
+.header-text {
+  padding-top: 15%;
+  opacity: 0.95;
+}
+
+#header-title {
+  max-width: 38%;
+  margin-left: 4.3%;
+  background: #fff;
+  padding: 1%;
+  letter-spacing: 7px;
+  font-size: 2.5vw;
+  opacity: 0.75;
+  border-radius: 10px 5px;
+  color: #434c5e;
+  transition: padding-left 0.25s, color 0.25s, max-width 0.25s, background 0.25s;
+}
+
+#header-title:hover {
+  transform: rotate(360deg);
+  color: #fff;
+  padding-left: 18%;
+  max-width: 70%;
+  background: #434c5e;
+}
+
+#header-btns {
+  padding-top: 10px;
+  margin-left: 4.3%;
+  color: #434c5e;
+}
+
+#logo-text {
+  float: left;
+}
+
+#logo-text a {
+  color: #434c5e;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 12px;
+  font-style: normal;
+  padding: 7px;
+  margin-left: 110px;
+}
+
+#logo-img {
+  height: 50px;
+  width: auto;
+  float: left;
+  margin-left: -290px;
+  margin-top: -11px;
+  position: absolute;
+  z-index: 1;
+}
+
+#sushki-img {
+  padding: 0;
+  width: 70%;
+  margin-left: 36%;
+  margin-top: 10.5%;
+  position: absolute;
+}
+
+#main-nav {
+  float: right;
+  list-style: none;
+  font-size: 0.6em;
+  padding: 7px;
+  letter-spacing: 2.5px;
+}
+
+#main-nav li {
+  display: inline-block; /* расположение списка в одну строку*/
+  margin-right: 30px;
+}
+
+#main-nav li a:link,
+#main-nav li a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #434c5e;
+  opacity: 0.65;
+  transition: opacity 0.15s;
+}
+
+#sticky-nav #main-nav li a:hover,
+#sticky-nav #main-nav li a:active {
+  opacity: 1;
+}
+
+nav {
+  background: #fff;
+  height: 75px;
+  padding: 25px;
+  margin: 0;
+  opacity: 0.5;
+  border-radius: 0px 0px 5px 5px;
+  transition: opacity 0.3s;
+}
+
+nav:hover {
+  opacity: 1;
+}
+
+#sticky-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  box-shadow: 0 2px 2px #d8dee9;
+}
+
+/*
+*********************************
+Buttons styles
+*********************************
+*/
+
+.btn:link,
+.btn:visited,
+input[type=submit] {
+  display: inline-block;
+  padding: 10px 30px;
+  text-decoration: none;
+  color: #434c5e;
+  border: 1px solid #fff;
+  border-radius: 180px;
+  transition: color 0.5s, border 0.8s;
+}
+
+.btn:hover,
+.btn:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  border: 1px solid rgb(10, 12, 15);
+  color: #1e242e;
+}
+
+.btn-order:link,
+.btn-order:visited,
+input[type=submit] {
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(81, 129, 184, 0.7));
+  border: 1px solid #fff;
+  transition: background-color 0.3s;
+}
+
+.btn-order:hover,
+.btn-order:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  background: #5690c1;
+  border: 1px solid rgb(225, 240, 253);
+  color: #fff;
+}
+
+/*
+*********************************
+Features  styles
+*********************************
+*/
+
+#headline-text {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 100%;
+}
+
+.points {
+  padding: 3%;
+  padding-bottom: 0;
+}
+
+ion-icon {
+  font-size: 300%;
+  color: #434c5e;
+  margin-bottom: 10px;
+}
+
+i {
+  padding-left: 40%;
+}
+
+#restoraunt-discription h2:after {
+  margin-bottom: 70px;
+}
+
+/*
+*********************************
+Food-menu  styles
+*********************************
+*/
+
+.img-container {
+  list-style: none;
+  width: 100%;
+}
+
+.img-container li {
+  display: block;
+  float: left;
+  width: 25%;
+}
+
+.food-img {
+  width: 100%;
+  overflow: hidden;
+  background: black;
+}
+
+.food-img img {
+  opacity: 0.7;
+  width: 100%;
+  height: auto;
+  transform: scale(1.2);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.food-img img:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/*
+*********************************
+How to order styles
+*********************************
+*/
+
+#phone-img {
+  width: 40%;
+}
+
+#phone-img-container {
+  margin-left: 10%;
+  margin-right: 6.6%;
+}
+
+.order-step {
+  margin-top: 100px;
+}
+
+.order-step div {
+  color: #1e242e;
+  border: 2px solid #a2cadd;
+  height: 50px;
+  width: 50px;
+  border-radius: 150px;
+  text-align: center;
+  padding: 5px;
+  font-size: 150%;
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+
+}
+
+.order-step p {
+  padding-top: 6px;
+}
+
+.app-btn img {
+  height: 50px;
+  margin-right: 10px;
+}
+
+.order-step:last-of-type {
+  margin-bottom: 50px;
+}
+
+.sec {
+  margin-bottom: 100px;
+}
+
+#phone-img-container img {
+  transition: transform 0.5s;
+}
+
+#phone-img-container img:hover {
+  transform: rotateY(25deg);
+}
+
+#phone-img-container {
+  margin-bottom: 100px;
+}
+
+/*
+*********************************
+Cities styles
+*********************************
+*/
+
+.col-3 img {
+  width: 100%;
+  padding-right: 15%;
+}
+
+.city-info {
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.city-info i {
+  padding-left: 0%;
+  font-size: 30%;
+  float: left;
+  display: inline-block;
+  text-align: center;
+  width: 30px;
+}
+
+.city-info p {
+  margin-left: 30px;
+  font-size: 70%;
+  text-align: left;
+}
+
+#cities-section h2:after {
+  margin-bottom: 70px;
+}
+
+/*
+*********************************
+Feedback styles
+*********************************
+*/
+
+#feedback-section {
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/maki-sushi.jpg);
+  color: #fff;
+}
+
+#feedback-section blockquote {
+  font-style: italic;
+  font-weight: 300;
+  background-attachment: fixed;
+}
+
+cite {
+  display: block;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+cite img {
+  display: inline-block;
+  width: 20%;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+blockquote p {
+  text-align: center;
+  margin-left: 70px;
+  margin-right: 70px;
+  line-height: 23px;
+  letter-spacing: 0.5px;
+}
+
+#feedback-section h2:after {
+  background-color: #fff;
+  margin-bottom: 70px;
+}
+
+/*
+*********************************
+Contac-form styles
+*********************************
+*/
+
+#contact-form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #3b4252;
+}
+
+#contact-form div {
+  padding-top: 15px;
+  color: #3b4252;
+}
+
+/*
+*********************************
+Footer styles
+*********************************
+*/
+
+footer {
+  text-align: center;
+  color: #3b4252;
+  padding: 100px 0px 50px 0px;
+  background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0.1)), url(../img/bg_img.jpg);
+}
+
+footer p {
+  font-size: 70%;
+}
+
+#footer-social {
+  list-style: none;
+  font-size: 0.6em;
+  padding: 7px;
+  letter-spacing: 2.5px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+#footer-social li {
+  display: inline-block; /* расположение списка в одну строку*/
+  margin-right: 30px;
+}
+
+#footer-social li a:link,
+#footer-social li a:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+#footer-social li a:hover,
+#footer-social li a:active {
+  opacity: 1;
+}
+
+/*
+*********************************
+Media-query styles
+*********************************
+*/
+
+@media only screen and (max-width: 970px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+    width: 100%;
+  }
+  .btn-order {
+    margin-bottom: 20px;
+  }
+  .header-text {
+    margin-top: 30%;
+  }
+  .points p,
+  #headline-text {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #cities-section {
+    margin-left: 15%;
+  }
+  #cities-section h2 {
+    margin-left: -70px;
+  }
+  .sec {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .sec a {
+    margin-right: 20px;
+  }
+  .pep p,
+  .pep cite {
+    padding-bottom: 20px;
+  }
+  .order-step {
+    padding-right: 20px;
+  }
+
+  .mobile-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 30px;
+    display: inline-block;
+  }
+
+  #main-nav {
+    float: right;
+    margin-top: 45px;
+    display: none;
+  }
+
+  #main-nav li {
+    display: block;
+    padding: 10px 0;
+  }
+
+  #main-nav li a:link,
+  #main-nav li a:visited {
+    display: block;
+  }
+}
+
+/*
+*********************************
+Aninimation styles
+*********************************
+*/
+
+.anima,
+.anim2 {
+  opacity: 0;
+}
+
+.anima.animated,
+.anim2.animated {
+  opacity: 1;
+  animation-duration: 1s;
+}
+
+.anim2.animated {
+  animation-duration: 0.5s;
+}
