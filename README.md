@@ -1,2 +1,0 @@
-# tyanbz.github.io
-Contacts
