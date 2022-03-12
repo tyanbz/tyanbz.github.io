@@ -1,0 +1,205 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', sans-serif;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+
+/*
+===============================
+=========== header ============
+===============================
+*/
+
+.header{
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+    padding-top: 1%;
+    padding-bottom: 2%;
+    letter-spacing: 1px;
+    text-align: center;
+ }
+
+ .discription {
+    font-size: 30px;
+    line-height: 35px;
+    font-family: Verdana, sans-serif;
+    font-weight: 900;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    text-transform: uppercase;
+    text-align: center;
+}
+.discription:before {
+    content: '';
+    position: absolute;
+    filter: blur(10px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: screen;
+    background-image: repeating-linear-gradient(-45deg, transparent, transparent 1em, #6f9ea4 1em, #0B5CA5 50%), repeating-linear-gradient(45deg, #0B5CA5, #0B5CA5 1em, #6f9ea4 1em, #6f9ea4 50%);
+    background-size: 3em 3em, 2em 2em;
+    animation-name: ani;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes ani {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+    }
+}
+@media (max-width:690px) {    
+    .pouring {font-size: 20px;}    
+}
+
+
+/*
+===============================
+========== top menu ==========
+===============================
+*/
+
+nav {
+    text-align: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+a {color: #d2d2d2;}
+
+a:visited {color: #d2d2d2;}
+
+.submenu {
+    list-style: none;
+}
+
+.topmenu {
+    background: white;
+}
+
+.topmenu a {
+    text-decoration: none;
+    display: block;
+    transition: .4s ease-in-out;
+}
+
+.topmenu>li>a {
+    padding: 20px;
+    color: #292929;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.topmenu li a:hover {
+    color: #6f9ea4;
+}
+
+@media(max-width: 599px) {
+    .topmenu>li>a {
+       padding: 15px 20px;
+    }
+    .submenu li a {
+       padding: 10px 20px;
+       margin: 0 20px;
+    }
+}
+
+@media(min-width: 600px) {
+    .topmenu {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+    }
+    .topmenu>li {
+       position: relative;
+    }
+    .topmenu>li:after {
+       content: "";
+       position: absolute;
+       right: 0;
+       width: 1px;
+       height: 12px;
+       background: #d2d2d2;
+       top: 24px;
+       box-shadow: 4px -2px 0 #292929;
+       transform: rotate(30deg);
+    }
+    .topmenu>li:last-child:after {
+       background: none;
+       box-shadow: none;
+    }
+    .submenu {
+       position: absolute;
+       left: 50%;
+       top: 100%;
+       width: 210px;
+       margin-left: -105px;
+       background: #292929;
+       border: 1px solid #292929;
+       z-index: 5;
+       visibility: hidden;
+       opacity: 0;
+       transform: scale(.8);
+       transition: .4s ease-in-out;
+    }
+    .topmenu>li:hover .submenu {
+       visibility: visible;
+       opacity: 1;
+       transform: scale(1);
+    }
+    .submenu li a {
+       text-align: center;
+       padding: 10px 0;
+       margin: 0 10px;
+    }
+}
+
+
+/*
+===============================
+============ footer ===========
+===============================
+*/
+
+footer{
+    /* 0 flex-grow, 0 flex-shrink, auto flex-basis */
+    flex: 0 0 auto;
+}
+
+.contact-div {
+    padding-top: 1%;
+    padding-bottom: 5%;
+    padding-left: 23%;
+    letter-spacing: 1px;
+    position: absolute;
+}
+
+#link {
+    color: #292929;
+}
+
+#link:visited {
+    color: #292929;
+}
